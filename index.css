@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital@1&family=Orbitron&family=Playball&family=Press+Start+2P&display=swap');
+
+body {
+  background-color: rgb(255, 198, 75);
+  font-family: 'Chakra Petch', sans-serif;
+  /* font-family: 'Orbitron', sans-serif; */
+}
+
+#mainContent {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+h1,
+footer {
+  background-color: blue;
+  color: white;
+  border-radius: 15px;
+  padding: 0.75em 0;
+  padding-left: 1em;
+}
+
+h1 {
+  font-size: 5em;
+  padding: 0.15em 0;
+  padding-left: 1.5em;
+  margin-top: 15px;
+  font-family: 'Playball', cursive;
+  font-weight: 100;
+}
+
+h2 {
+  border-bottom: 1px solid #aaa;
+  font-size: 2em;
+  font-weight: bold;
+  padding-left: 4em;
+  margin: 0;
+}
+
+img {
+  float: right;
+  width: 300px;
+  margin: 25px 50px;
+  margin-top: -25px;
+  /* border: 5px solid red; */
+  /* align-items: center; */
+  /* margin-right: 2em; */
+  border-radius: 0.5em;
+  box-shadow: 5px 5px 10px black;
+}
+
+p > a:link,
+p > a:visited,
+p > a:hover {
+  color: white;
+  text-decoration-line: none;
+  border-bottom: 0.5px solid white;
+  cursor: pointer;
+}
+
+ul {
+  margin-top: 10px;
+  margin-bottom: 25px;
+  padding-left: 4.75em;
+  font-size: 1.75em;
+  /* min-height: 336px; */
+}
+
+li > a:link,
+li > a:visited,
+li > a:hover,
+li > a:active {
+  color: blue;
+  text-decoration-line: none;
+  cursor: pointer;
+  /* line-height: 1.5em; */
+}
+
+ul > p {
+  margin: 0;
+  font-size: 18px;
+}
+
+footer {
+  /* position: fixed; */
+  width: 100%;
+  /* margin-top: 250px; */
+  text-align: center;
+  padding: 0.05px 0;
+}
+
+#lastUpdated {
+  color: rgb(255, 166, 0);
+}
+
+@media screen and (min-height: 705.3px) {
+  footer {
+    margin-top: 100px;
+    /* background-color: cyan; */
+  }
+}
+
+@media screen and (min-height: 805.3px) {
+  footer {
+    margin-top: 315px;
+    /* background-color: pink; */
+  }
+  /* body {
+    background-color: red;
+  } */
+}
