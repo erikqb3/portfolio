@@ -468,7 +468,7 @@ div.main_stuff > div.gallery > div.showing {
   height: 500px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(8, 39.375px);
   grid-template-rows: repeat(13, 1fr);
 }
 
