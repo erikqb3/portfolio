@@ -5,6 +5,7 @@ let button4 = document.getElementById("gameInfo_button")
 let button5 = document.getElementById("backToGame");
 
 
+
 function stageChange () {
   let stage = document.getElementById("mainScreen");
   let stagesArray = ['url(\"Stage1.png\")', 'url(\"Stage2.png\")','url(\"Stage3.png\")','url(\"Stage4.png\")','url(\"Stage5.png\")','url(\"Stage6.png\")','url(\"Stage7.png\")']
