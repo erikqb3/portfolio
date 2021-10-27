@@ -1106,7 +1106,7 @@ const checkTypeAdvantage = (attacking, defending) => {
         damage = damage;
     }
 
-    console.log(attacking,defending,damage)
+    // console.log(attacking,defending,damage)
 
     return attacking, defending, damage;
 }

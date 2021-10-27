@@ -48,36 +48,31 @@ function getRandomPokemon (path) {
   // console.log(path)
   let number = Math.floor(Math.random() * 899);
   const url = `https://pokeapi.co/api/v2/pokemon/${number}`;
-  
+  console.log(number)
 //function pathResults(path, number, url)
    
   if (path === 1) { 
-    clearPokemon();
+    clearOtherPokemon();
     fetch(url).then(response => response.json()).then(yourPokemon); 
+    console.log("Hellow!")
   }
   else if (path === 2) {
-    yourPokemon = document.getElementById("yourPokemon_img").children;
+    yourPokemonCount = document.getElementById("yourPokemon_img").children.length;
 
-    if (yourPokemon.length ===0) {
-      alert("You need to get Pokemon!")
+    if (yourPokemonCount === 0) {
+      alert("You need to get a Pokemon!")
     }
     else {
       fetch(url).then(response => response.json()).then(otherPokemon).then(prepForCalculations);
     }
   }
   else if (path === 3) {
-    clearPokemon();
+    clearOtherPokemon();
     let otherNumber = Math.floor(Math.random() * 899);
     const otherUrl = `https://pokeapi.co/api/v2/pokemon/${otherNumber}`;
-
-
-    // fetch(url).then(response => response.json()).then(yourPokemon)
-    // fetch(otherUrl).then(response => response.json()).then(otherPokemon); 
-
     Promise.all([fetch(url).then(response => response.json()).then(yourPokemon),
-      fetch(otherUrl).then(response => response.json()).then(otherPokemon)]).then(prepForCalculations)
-
-
+      fetch(otherUrl).then(response => response.json()).then(otherPokemon)]).then(prepForCalculations);
+    // fetch(url).then(response => response.json()).then(yourPokemon).then(fetch(otherUrl).then(response => response.json()).then(otherPokemon)).then(prepForCalculations);
   }
 }
 
@@ -117,7 +112,7 @@ function choosePokemon(results) {
 function yourPokemon(jsonData) {
   let yourPokemon = choosePokemon(jsonData);
   let htmlStorage = document.getElementById("yourPokemon_info");
-  // console.log(yourPokemon);
+  // console.log(yourPokemon[0]);
   // console.log(htmlStorage);
   if (yourPokemon[2] != null) {
     htmlStorage.innerHTML = yourPokemon[0].toUpperCase() + yourPokemon[4] + yourPokemon[1] + yourPokemon[2] + yourPokemon[5];
@@ -140,8 +135,7 @@ function yourPokemon(jsonData) {
 function otherPokemon(jsonData) {
   let otherPokemon = choosePokemon(jsonData);
   let htmlStorage = document.getElementById("otherPokemon_info");
-  // console.log(otherPokemon);
-  // console.log(htmlStorage);
+
   if (otherPokemon[2] != null) {
     htmlStorage.innerHTML = otherPokemon[0].toUpperCase() + otherPokemon[4] + otherPokemon[1] + otherPokemon[2] + otherPokemon[5];
   }
@@ -149,29 +143,6 @@ function otherPokemon(jsonData) {
     htmlStorage.innerHTML = otherPokemon[0].toUpperCase() + otherPokemon[4] + otherPokemon[1] + otherPokemon[5];
   }
   document.getElementById("otherPokemon_img").innerHTML = otherPokemon[3];
-
-  // yourPokemon_type1 = document.getElementById("yourPokemon_info").children[2];
-  // yourPokemon_type2 = document.getElementById("yourPokemon_info").children[3];
-  // yourPokemon_size = parseInt(document.getElementById("yourPokemon_info").children[1].innerHTML);
-  // otherPokemon_type1 = document.getElementById("otherPokemon_info").children[2];
-  // otherPokemon_type2 = document.getElementById("otherPokemon_info").children[3];
-  // otherPokemon_size = parseInt(document.getElementById("otherPokemon_info").children[1].innerHTML);
-
-  // let competingTypes = [yourPokemon_type1, yourPokemon_type2, otherPokemon_type1, otherPokemon_type2];
-  // let competingSizes = [yourPokemon_size,otherPokemon_size];
-  // // console.log(competingTypes)
-  // // console.log(competingTypes[0].innerHTML)
-  // for (i=0; i < competingTypes.length; i++) {
-  //   if (competingTypes[i] != undefined) {
-  //     competingTypes[i] = competingTypes[i].innerHTML;
-  //   }
-  //   else {
-  //     competingTypes[i] = null;
-  //   }
-  // }
-
-  // timeToFight(competingTypes,competingSizes);
-  // // console.log(yourPokemon[3])
 
 }
 
@@ -271,9 +242,7 @@ function scoreChange (yourDamageDelt,otherDamageDelt) {
   // console.log(yourScore,otherScore)
 };
 
-function clearPokemon () {
-  let otherPokemon = document.getElementById("otherPokemon_img").children;
-  // console.log(otherPokemon)
+function clearOtherPokemon () {
   if (otherPokemon.length != 0) {
     document.getElementById("otherPokemon_img").innerHTML = "";
     document.getElementById("otherPokemon_info").innerHTML = "";
