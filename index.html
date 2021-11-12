@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="medium.css">
     <link href="index.css" rel="stylesheet">
-    <script src="index.js"></script>
+    <script src="index.js" defer></script>
     <!-- <script src="/Assignments/assignmentPortalStuff/AssignmentPortal.js" defer></script>  
         USE THIS-->
 </head>
@@ -21,7 +21,12 @@
         <h1>Erik Q. Birch</h1>
     </header>
 <div id="section2">
-    <img src="portfolioPicture.jpg" alt="picture of Erik Q. Birch">
+    <picture>
+        <source srcset="portfolioPicture_760px.jpg" media="(min-width:760px) and (max-width: 1200px)" alt="picture of Erik Q. Birch">
+        <source srcset="portfolioPicture.jpg" media="(min-width: 1200px)" alt="picture of Erik Q. Birch">
+        <img src="portfolioPicture.jpg" alt="picture of Erik Q. Birch">
+    </picture>
+    <!-- <img src="portfolioPicture.jpg" alt="picture of Erik Q. Birch"> -->
     <div id="websiteProjects_label_holder">
         <h2>Website Projects</h2>
         <p>(Note: some are either not finished or not uploaded yet)</p>
@@ -91,6 +96,7 @@
             <td>Fan-Art</td>
             <td>1</td>
         </tr> -->
+
     </table>
 
 
@@ -102,7 +108,7 @@
         <ul class="dropDown_content">
             <li><a href="*">Illustrations</a></li>
             <li><a href="*">Music</a></li>
-            <li><a href="*">Creative Writings</a></li>
+            <li><a href="*">Writings</a></li>
             <li><a href="*">Other</a></li>
         </ul>
     </div>

@@ -27,8 +27,25 @@ window.onload = (event) => {
     // }
 
     // const currentDate = dayName + ' ' + actualDate + datesEnding + '-' + monthName + '-' + todaysDate.getFullYear() + " " + hour + ":" + todaysDate.getMinutes();
-
-    
+ 
     let lastModified = document.lastModified
     document.getElementById('currentdate').textContent = lastModified
+ 
+    let windowWidth = window.innerWidth;
+    console.log(window.innerWidth);
+    smallerMode(windowWidth);
+
+}
+
+function smallerMode (windowWidth) {
+    if (windowWidth <= 1200) {
+        let extraButton = document.getElementById("dropDown");
+        extraButton.addEventListener("click",toggleGoDown);
+    }
+}
+
+
+function toggleGoDown () {
+    document.getElementById("dropDown").classList.toggle("goDown");
+    console.log("help")
 }
