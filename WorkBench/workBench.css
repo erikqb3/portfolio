@@ -1,0 +1,37 @@
+div#holder {
+  position: relative;
+  top: 500px;
+  width: 31.5%;
+  margin: 0 auto;
+}
+
+div#square {
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+  position: relative;
+  animation-name: myExample; /*FIRST*/
+  animation-duration: 2.5s;
+  animation-timing-function: linear;
+  animation-delay: 0;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse; /*LAST*/
+}
+
+@keyframes myExample {
+  0% {
+    left: 0px;
+    width: 100px;
+    height: 100px;
+  }
+  50% {
+    left: 250px;
+    width: 20px;
+    height: 20px;
+  }
+  100% {
+    left: 500px;
+    width: 100px;
+    height: 100px;
+  }
+}
