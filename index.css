@@ -242,15 +242,15 @@ p > a:hover {
     /* z-index: 0; */
   }
 
-  /* .dropDown_content > li {
+  .dropDown_content > li {
     margin: 0;
-  } */
+  }
 
-  /* #dropDown:hover {
+  #dropDown:hover {
     display: flex;
     width: 62.5%;
     transition: width 0.5s;
-  } */
+  }
   #dropDown:hover > a.dropbtn {
     width: 21%;
     text-align: center;
@@ -267,22 +267,22 @@ p > a:hover {
     /* color: white; */
   }
 
-  /* #dropDown:hover > ul.dropDown_content {
+  #dropDown:hover > ul.dropDown_content {
     display: flex;
     transition-property: display;
     transition-delay: 2s;
-  } */
+  }
 
-  /* #dropDown:hover > ul.dropDown_content {
+  #dropDown:hover > ul.dropDown_content {
     margin: 0 auto;
-  } */
+  }
 
-  /* #dropDown:hover > ul > li {
+  #dropDown:hover > ul > li {
     margin: 0 7.5%;
     display: flex;
     align-items: center;
     transition: margin 10s;
-  } */
+  }
 
   a.dropbtn {
     display: block;
