@@ -225,6 +225,11 @@ function timeToFight (competingTypes,competingSizes) {
   scoreChange(yourDamageDelt,otherDamageDelt);
 }
 
+// function damagePointGap (damageElement){
+
+  
+// }
+
 function scoreChange (yourDamageDelt,otherDamageDelt) {
   let yourScore = parseInt(document.getElementById("yourPoints").textContent);
   let otherScore = parseInt(document.getElementById("otherPoints").innerHTML);

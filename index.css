@@ -205,6 +205,17 @@
     border-radius: 0.5em;
     box-shadow: 5px 5px 10px black;
   }
+
+  th {
+    font-size: 1.75em;
+  }
+
+  td > a:link,
+  td > a:visited,
+  td > a:hover,
+  td > a:active {
+    font-size: 1.75em;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -231,7 +242,7 @@
   }
 
   th {
-    font-size: 1.75em;
+    font-size: 2.5em;
     line-height: 0.5em;
     /* padding: 5px; */
     font-weight: bold;
@@ -242,9 +253,7 @@
   td > a:visited,
   td > a:hover,
   td > a:active {
-    color: green;
     font-size: 1.5em;
-    cursor: pointer;
   }
 
   /*DropDown*/
