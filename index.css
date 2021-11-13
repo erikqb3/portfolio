@@ -18,7 +18,7 @@
   footer {
     background-color: blue;
     color: white;
-    border-radius: 15px;
+    /* border-radius: 15px; */
     padding: 0.75em 0;
     padding-left: 1em;
   }
@@ -27,7 +27,7 @@
     font-size: 4em;
     padding: 0.15em 0;
     padding-left: 5%;
-    margin-top: 15px;
+    margin-top: 0px;
     font-family: 'Playball', cursive;
     font-weight: 100;
   }
@@ -135,16 +135,19 @@
     /* z-index: 0; */
   }
 
-  /* .dropDown_content > li {
-  margin: 0;
-} */
+  .dropDown_content > li {
+    margin: 5px auto 5px auto;
+  }
 
   /* #dropDown:hover > ul.dropDown_content {
   display: grid;
 } */
   .goDown > ul.dropDown_content {
     display: grid;
-    transition: display 2s;
+    height: auto;
+    transition: all 2s;
+    /* margin: 10px auto; */
+    margin-bottom: 10px;
   }
 
   a.dropbtn {
@@ -152,6 +155,7 @@
     color: white;
     text-align: center;
     padding: 14px 16px;
+    /* padding-bottom: 0; */
     text-decoration: none;
   }
 
