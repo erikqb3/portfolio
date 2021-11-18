@@ -4,6 +4,15 @@
     display: block;
   }
 
+  div > picture.banner-place > img#menuPageBanner.banner {
+    width: 50%;
+    height: 125px;
+    display: block;
+    margin: auto;
+    margin-top: 25px;
+    border: 7.5px solid rgb(103, 182, 179);
+  }
+
   div.PCW_MI_tabs > button.current-tab {
     text-decoration: underline rgb(245, 200, 92);
   }
@@ -34,6 +43,7 @@
     border: 7.5px solid rgb(213, 86, 69);
   }
 
+  /*CART*/
   div.cart {
     background-color: white;
     width: 940px;
@@ -43,7 +53,7 @@
     overflow: auto;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 1fr 4fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 4fr 1fr 1fr 1fr 1fr;
     text-align: center;
     border: 2px solid rgb(100, 100, 100);
   }
@@ -135,6 +145,22 @@
     font-size: 1em;
     margin: 0;
     margin-bottom: 25px;
+  }
+
+  div.cart > div#cartButtons {
+    grid-column: 1/-1;
+    grid-row: -1;
+    margin: 15px auto;
+    display: flex;
+  }
+
+  div.cart > div#cartButtons > button {
+    color: white;
+    font-size: 1.5rem;
+    background-color: rgb(213, 86, 69);
+    border: 5px solid rgb(141, 56, 45);
+    padding: 10px;
+    margin: 0 50px;
   }
 
   /* menutItems */

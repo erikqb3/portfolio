@@ -37,7 +37,7 @@
     /* background-color: blue; */
   }
 
-  /*Title Holder*/
+  /*MAIN CONTENT*/
   div#websiteProjects_label_holder {
     padding-left: 5%;
     border-bottom: 1px solid #aaa;
@@ -65,6 +65,7 @@
     border-radius: 0.5em;
     box-shadow: 5px 5px 10px black;
     float: none;
+    /* border: 5px solid red; */
   }
 
   /*TABLE*/
@@ -167,6 +168,46 @@
     list-style: none;
   }
 
+  /*UNDER MAINTENANCE PAGE*/
+
+  h1#underMaintenance_h1 {
+    text-align: center;
+    margin: 0 auto;
+    padding: 1.5rem;
+    font-size: 2.5rem;
+    /* color: red; */
+  }
+  div#underMaintenance_text {
+    font-size: 1.5rem;
+    width: 75%;
+    margin: 2rem auto;
+    /* color: red; */
+  }
+
+  img#underMaintenance_img {
+    float: none;
+    width: 75%;
+    margin: 0 auto;
+    position: initial;
+  }
+
+  button#returnButton {
+    display: block;
+    background-color: blue;
+    font-size: 1.5rem;
+    margin: 30px auto;
+    float: none;
+    cursor: pointer;
+  }
+
+  a#returnButton_link:link,
+  a#returnButton_link:visited,
+  a#returnButton_link:hover,
+  a#returnButton_link:active {
+    color: white;
+    text-decoration: none;
+  }
+
   /*FOOTER*/
 
   footer {
@@ -194,14 +235,10 @@
 
 @media screen and (min-width: 760px) {
   img {
-    /* float: none; */
     display: block;
     width: 80%;
     margin: 25px auto;
     margin-top: -25px;
-    /* border: 5px solid red; */
-    /* align-items: center; */
-    /* margin-right: 2em; */
     border-radius: 0.5em;
     box-shadow: 5px 5px 10px black;
   }
@@ -215,6 +252,18 @@
   td > a:hover,
   td > a:active {
     font-size: 1.75em;
+  }
+
+  div#underMaintenance_text {
+    font-size: 1.5rem;
+  }
+
+  img#underMaintenance_img {
+    width: 60%;
+  }
+
+  h1#underMaintenance_h1 {
+    font-size: 4rem;
   }
 }
 
@@ -323,5 +372,21 @@
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+  }
+
+  /*UNDER MAINTENANCE PAGE*/
+
+  h1#underMaintenance_h1 {
+    font-size: 5rem;
+  }
+  div#underMaintenance_text {
+    font-size: 2rem;
+    width: 75%;
+    margin: 3rem auto;
+    /* color: red; */
+  }
+
+  img#underMaintenance_img {
+    width: 40%;
   }
 }

@@ -7,18 +7,20 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    margin: auto;
   }
 
   div.main_stuff {
     background-color: rgb(255, 145, 76);
-    border: 25px solid rgb(237, 181, 134);
-    width: 1000px;
+    border: 10px solid rgb(237, 181, 134);
+    /* width: 1000px; */
+    width: 85%;
     margin: auto;
     border-radius: 5px;
   }
 
   div > img.Logo {
-    width: 650px;
+    width: 85%;
     display: block;
     margin: 10px auto;
     /* box-shadow: 5px 5px 10px rgb(224,119,51); */
@@ -27,12 +29,13 @@
     /* border: 5px red solid; */
   }
 
-  div > img.banner {
-    width: 890px;
+  div > picture > img.banner {
+    width: 85%;
+    height: 125px;
     display: block;
     margin: auto;
     margin-top: 25px;
-    border: 25px solid rgb(103, 182, 179);
+    border: 7.5px solid rgb(103, 182, 179);
   }
 
   p.escape {
@@ -51,7 +54,7 @@
   }
 
   div.title_tag {
-    width: 940px;
+    width: 90%;
     display: block;
     margin: auto;
     margin-top: 25px;
@@ -66,22 +69,21 @@
     display: grid;
     grid-gap: 20px;
     grid-template-columns: 1fr 1fr 1fr;
-    margin: 25px auto;
+    margin: 15px auto;
     padding: 0px;
-    width: 950px;
+    width: 90%;
   }
 
   nav > ul > li > a:link,
   nav > ul > li > a:visited {
     display: block;
-    font-size: 2em;
+    font-size: 1em;
     line-height: 2em;
-    width: 96%;
-    color: black;
+    width: 100%;
     text-align: center;
     justify-content: center;
     background-color: rgb(213, 86, 69);
-    border: 7.5px solid rgb(141, 56, 45);
+    border: 2.5px solid rgb(141, 56, 45);
     color: white;
     text-shadow: 2px 2px black;
     text-decoration: none;
@@ -91,17 +93,17 @@
 
   div.option_items {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(3, 1fr);
-    grid-gap: 20px;
-    width: 950px;
-    height: 500px;
-    margin: 25px auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 10px;
+    width: 90%;
+    height: 300px;
+    margin: 15px auto;
   }
 
   div.option_items > #curry {
-    grid-column: 1;
-    grid-row: 1/4;
+    grid-column: 1/4;
+    grid-row: 1;
     position: relative;
     border: 5px solid rgb(103, 182, 179);
   }
@@ -141,8 +143,8 @@
   }
 
   div.option_items > #menu_items {
-    grid-column: 2;
-    grid-row: 1/2;
+    grid-column: 1;
+    grid-row: 2;
     position: relative;
     border: 5px solid rgb(103, 182, 179);
   }
@@ -181,7 +183,7 @@
 
   div.option_items > #parties_events {
     grid-column: 2;
-    grid-row: 2/3;
+    grid-row: 2;
     position: relative;
     border: 5px solid rgb(103, 182, 179);
   }
@@ -218,8 +220,8 @@
   }
 
   div.option_items > #testimonials {
-    grid-column: 2;
-    grid-row: 3/4;
+    grid-column: 3;
+    grid-row: 2;
     position: relative;
     border: 5px solid rgb(103, 182, 179);
   }
@@ -323,12 +325,13 @@
     /* border: 5px red solid; */
   }
 
-  div > img.banner {
-    width: 890px;
+  div > picture > img.banner {
+    width: 93.5%;
+    height: 275px;
     display: block;
     margin: auto;
     margin-top: 25px;
-    border: 25px solid rgb(103, 182, 179);
+    border: 10px solid rgb(103, 182, 179);
   }
 
   p.escape {

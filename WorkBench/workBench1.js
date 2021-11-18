@@ -44,3 +44,18 @@ function FindIntersection(strArr) {
   return result.length > 0 ? result.join(',') : 'false'
 
 }
+
+
+
+
+let city = "Rexburg"
+let stateCode = "ID"
+let key = "fa5461ada34b7f39fee29ec7f416ffb6"
+
+let requestURL = `api.openweathermap.org/data/2.5/weather?q=${city},${stateCode},${USA}&appid=${key}`
+
+let units = "metric";
+
+if (units != "standard") {
+  requestURL += `&units${units }`
+}
