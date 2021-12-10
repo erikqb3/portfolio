@@ -18,6 +18,7 @@ var totalSum = 0;
 var tax = 0;
 var grandTotal = 0;
 
+
 //FUNCTIONS
 const updateTabs = (currentTab, targetTab) => { //WORKS
   currentTab.classList.remove('current-tab');
@@ -72,23 +73,29 @@ const changeItems = (targetTab,tabs) => {
 
 
 function addToCart (event) {
-  console.log("Ni Hao")
-  listBox.classList.remove("invisible");
   const addedItem = event.target.parentNode;
-  console.log(addedItem)
+  let addedItem_quantity = parseFloat(addedItem.children[5].value);
+  console.log(addedItem_quantity);
 
-  const itemElements = Array.from(addedItem.children);
+  if (addedItem_quantity <= 0) {
+    return;
+  }
+  else {
+    listBox.classList.remove("invisible");
+  }
 
-  // const itemName = itemElements[1].innerHTML;
-  // purchasedItemsList.push(itemName);
-  // document.getElementById("purchases").innerHTML = purchasedItemsList;
+    const itemElements = Array.from(addedItem.children);
+  console.log(itemElements);
 
-  stackItems(itemElements)
-  stackQuantity(itemElements);
-  convertPrices(itemElements);
+  let purchasedInfo = extractInfo(itemElements);
+  console.log(purchasedInfo);
+
+  stackItems(purchasedInfo);
+  stackQuantity(purchasedInfo);
+  convertPrices(purchasedInfo);
   totalTogether(totalPrices);
   calcTax(totalSum);
-  calcGrandTotal(totalSum,tax,grandTotal)
+  calcGrandTotal(totalSum,tax,grandTotal);
   // console.log(totalPrices)
 
   
@@ -96,44 +103,49 @@ function addToCart (event) {
   
 }
 
-const stackItems = (itemElements) => {
-  const itemName = itemElements[1].innerHTML;
+
+const extractInfo = (itemElements) => {
+  let purchasedItem = itemElements[1].innerHTML;
+  let purchasedQuantity = itemElements[5].value;
+  let purchasedPrice = itemElements[2].innerHTML;
+
+  purchasedInfo = [];
+  purchasedInfo.push(purchasedItem);
+  purchasedInfo.push(purchasedQuantity);
+  purchasedInfo.push(purchasedPrice);
+  return purchasedInfo;
+}
+
+const stackItems = (purchasedInfo) => {
+  const itemName = purchasedInfo[0];
   purchasedItemsList.push(itemName);
   // purchasedItemsList.join(' ');
-  document.getElementById("purchases").innerHTML = purchasedItemsList.join(' ');
+  document.getElementById("purchases").innerHTML = purchasedItemsList.join('<br>');
 }
-const stackQuantity = (itemElements) => {
-  const itemQuantity_value = itemElements[5].value;
-  const inputValue = document.createElement("p");
-  const node = document.createTextNode(itemQuantity_value);
-  inputValue.appendChild(node);
-  inputValue.classList.add("quantityValue_number")
-  const parentNode_itemQuantity = document.getElementById("quantities");
-  parentNode_itemQuantity.appendChild(inputValue);
-  
-  // parentNode_itemQuantity.appendChild(space);
-  console.log(parentNode_itemQuantity)
+const stackQuantity = (purchasedInfo) => {
+  const itemQuantity_value = purchasedInfo[1];
+  purchasedItemsQuantity.push(itemQuantity_value);
+  // console.log(purchasedItemsQuantity)
+  document.getElementById("quantities").innerHTML = purchasedItemsQuantity.join('<br>')
 
-  // purchasedItemsQuantity.push(parentNode_itemQuantity.innerHTML);
-  // document.getElementById("quantities").innerHTML = purchasedItemsQuantity;
-  return parentNode_itemQuantity;
+  return itemQuantity_value;
 }
 const convertPrices = (itemElements) => {
   const newPrice_$ = "$"
-  const itemPrice = itemElements[2].innerHTML.substr(1,4);
+  const itemPrice = purchasedInfo[2].substr(1,4);
   const itemPrice_float = parseFloat(itemPrice); //is now a float
-  const itemQuantity_value = parseFloat(itemElements[5].value); //needs to be made a float
+  const itemQuantity_value = parseFloat(purchasedInfo[1]); //needs to be made a float
   const itemPrice_withQuant = parseFloat((itemPrice_float * itemQuantity_value).toFixed(2));
   // const priceAndQuant_float = (itemPrice_withQuant);
   totalPrices.push(itemPrice_withQuant);
-  const newPrice = newPrice_$.concat(itemPrice_withQuant) + "<br>";
+  const newPrice = newPrice_$.concat(itemPrice_withQuant);
   purchasedItemsPrices.push(newPrice);
   // console.log(purchasedItemsPrices)
 
 
-
+  // console.log(purchasedItemsPrices)
   // purchasedItemsPrices.push(newPrice.innerHTML);
-  document.getElementById("prices").innerHTML = purchasedItemsPrices.join('');
+  document.getElementById("prices").innerHTML = purchasedItemsPrices.join('<br>');
   return newPrice;
 }
 
@@ -162,6 +174,51 @@ const calcGrandTotal = (totalSum,tax,grandTotal) => {
 
   document.getElementById("grandTotal").innerHTML = newGrandTotal;
 }
+
+const removeItems = (event) => {
+  let listItems_array = document.getElementById("purchases").innerHTML.split("<br>");
+  let listQuantities_array = document.getElementById("quantities").innerHTML.split("<br>");
+  let listPrices_array = document.getElementById("prices").innerHTML.split("<br>");
+
+
+  console.log(listItems_array);
+  console.log(document.getElementById("purchases").innerHTML)
+  
+  document.getElementById("purchases").innerHTML = "";
+  document.getElementById("quantities").innerHTML = "";
+  document.getElementById("prices").innerHTML = "";
+
+  stackItems(newInfo);
+  stackQuantity(newInfo);
+  convertPrices(newInfo);
+  totalTogether(totalPrices);
+  calcTax(totalSum);
+  calcGrandTotal(totalSum,tax,grandTotal);
+  
+  listItems_array.pop();
+  listQuantities_array.pop();
+  listPrices_array.pop()
+
+  console.log(listItems_array);
+  console.log(document.getElementById("purchases").innerHTML)
+
+
+  for (i=0; i < listItems_array.length; i++) {
+    console.log("Hellow?")
+    let newInfo = [];
+    newInfo.push(listItems_array[i]);
+    newInfo.push(listQuantities_array[i]);
+    newInfo.push(listPrices_array[i]);
+  }
+  stackItems(newInfo);
+  stackQuantity(newInfo);
+  convertPrices(newInfo);
+  totalTogether(totalPrices);
+  calcTax(totalSum);
+  calcGrandTotal(totalSum,tax,grandTotal);
+
+}
+
 
 // CLICK
 track.addEventListener('click', e => {
@@ -300,7 +357,7 @@ galleryStuff.addEventListener('click', e=> {
 
 
 
-console.log(Math.PI)
+// console.log(Math.PI)
 
 
 
@@ -332,7 +389,7 @@ console.log(Math.PI)
 // const galleryStuff = document.querySelector('.gallery'); //element
 
 
-const arrayForPrevious = [null];
+// const arrayForPrevious = [null];
 
 
 // const addItemButtons = document.querySelectorAll(".add_item");

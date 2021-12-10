@@ -188,6 +188,13 @@ const removeItems = (event) => {
   document.getElementById("quantities").innerHTML = "";
   document.getElementById("prices").innerHTML = "";
 
+  stackItems(newInfo);
+  stackQuantity(newInfo);
+  convertPrices(newInfo);
+  totalTogether(totalPrices);
+  calcTax(totalSum);
+  calcGrandTotal(totalSum,tax,grandTotal);
+  
   listItems_array.pop();
   listQuantities_array.pop();
   listPrices_array.pop()
@@ -202,14 +209,13 @@ const removeItems = (event) => {
     newInfo.push(listItems_array[i]);
     newInfo.push(listQuantities_array[i]);
     newInfo.push(listPrices_array[i]);
-
-    stackItems(newInfo);
-    stackQuantity(newInfo);
-    convertPrices(newInfo);
-    totalTogether(totalPrices);
-    calcTax(totalSum);
-    calcGrandTotal(totalSum,tax,grandTotal);
   }
+  stackItems(newInfo);
+  stackQuantity(newInfo);
+  convertPrices(newInfo);
+  totalTogether(totalPrices);
+  calcTax(totalSum);
+  calcGrandTotal(totalSum,tax,grandTotal);
 
 }
 
