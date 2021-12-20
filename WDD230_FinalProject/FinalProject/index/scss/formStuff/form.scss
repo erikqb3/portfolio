@@ -1,0 +1,8 @@
+@import 'form(min)';
+
+@media only screen and (min-width: 760px) {
+  @import 'form(med)';
+}
+@media only screen and (min-width: 1200px) {
+  @import 'form(max)';
+}

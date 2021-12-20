@@ -1,0 +1,41 @@
+//variables
+@mixin myFontStyle {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: bold;
+}
+
+body {
+  // background-color: red;
+}
+main > form > fieldset {
+  // background-color: blue;
+  width: 75%;
+  display: block;
+  margin: 30px auto 30px auto;
+  // color:maroon;
+  border: 1px solid maroon;
+  legend {
+    @include myFontStyle;
+    color: red;
+    padding: 0 10px;
+    font-size: 1.75rem;
+    // font-family: $myFontStyle;
+  }
+  label,
+  label > input,
+  label > select {
+    font-size: 1rem;
+    display: block;
+    cursor: pointer;
+  }
+  label {
+    margin: 15px 0;
+  }
+  div#buttons {
+    display: flex;
+    label {
+      margin-right: 10px;
+    }
+  }
+}

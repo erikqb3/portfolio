@@ -1,0 +1,24 @@
+body {
+  // background-color: red;
+}
+main > form > fieldset {
+  // background-color: blue;
+  width: 75%;
+  display: block;
+  margin: 30px auto 230px auto;
+  label,
+  label > input {
+    font-size: 1rem;
+    display: block;
+    cursor: pointer;
+  }
+  label {
+    margin: 15px 0;
+  }
+  div#buttons {
+    display: flex;
+    label {
+      margin-right: 10px;
+    }
+  }
+}
