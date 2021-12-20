@@ -131,10 +131,14 @@ function displayGameCards_A() {
 }
 
 function closeMessage() {
+  let prevPage = document.referrer;
+  let message = document.getElementById("gameMessage");
+  if (prevPage == "https://erikqb3.github.io/portfolio/WDD230_FinalProject/FinalProject/home/index.html") {
+    message.classList.add("hidden");
+  }
+
   let messageBtn = document.getElementById("gameMessage");
   messageBtn.addEventListener('click',e=> {
-    message = document.getElementById("gameMessage");
     message.classList.add("hidden");
-  
   })
 }
