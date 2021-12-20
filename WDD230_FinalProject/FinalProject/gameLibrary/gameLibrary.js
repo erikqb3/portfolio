@@ -104,13 +104,14 @@ function resetCards(selected) {
 
 function sortJSON(sortOption) {
   let jsonFile  = "../gameLibrary/gamesList.json";
+  console.log(sortOption)
   fetch(jsonFile)
   .then((response) => response.json())
   .then((jsObject) => {
     // jsObject.forEach((game)=> {
       switch(sortOption) {
         case "Game Title":
-          console.log(jsObject);
+          console.log(jsObject.title);
           break;
         case "Creator":
           console.log(jsObject);
@@ -129,6 +130,10 @@ function sortJSON(sortOption) {
       }
     // })
   })
+  // const points = ["a","C","F","z","e","r"];
+  // points.sort(function(a, b){return a-b}); //numeric
+  // // points.sort(); //apha
+  // console.log(points)
 }
 
 function displayGameCards_A(sortOption) {
