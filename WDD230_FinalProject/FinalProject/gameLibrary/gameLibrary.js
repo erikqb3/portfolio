@@ -133,7 +133,7 @@ function displayGameCards_A() {
 function closeMessage() {
   let prevPage = document.referrer;
   let message = document.getElementById("gameMessage");
-  if (prevPage == "https://erikqb3.github.io/portfolio/WDD230_FinalProject/FinalProject/home/index.html") {
+  if (prevPage != "https://erikqb3.github.io/portfolio/WDD230_FinalProject/FinalProject/home/index.html") {
     message.classList.add("hidden");
   }
 
