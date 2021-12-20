@@ -5,7 +5,8 @@ closeMessage();
 displayAlphaNav();
 createDropDown();
 showDropDown();
-displayGameCards_A();
+selectSortingOption();
+displayGameCards_A(null);
 checkLoggedIn();
 
 function checkLoggedIn() {
@@ -42,14 +43,19 @@ function createDropDown() {
 
   let drop_item1 = document.createElement('li');
   drop_item1.textContent = "Game Title";
+  drop_item1.classList.add("dropDown_option");
   let drop_item2 = document.createElement('li');
   drop_item2.textContent = "Creator"
+  drop_item2.classList.add("dropDown_option");
   let drop_item3 = document.createElement('li');
   drop_item3.textContent = "Date Contributed"
+  drop_item3.classList.add("dropDown_option");
   let drop_item4 = document.createElement('li');
   drop_item4.textContent = "Play Style"
+  drop_item4.classList.add("dropDown_option");
   let drop_item5 = document.createElement('li');
   drop_item5.textContent = "Fan-Art Style";
+  drop_item5.classList.add("dropDown_option");
 
   let drop_holder = document.getElementById('dropDown_holder');
   drop_holder.appendChild(drop_button);
@@ -73,14 +79,67 @@ function showDropDown() {
   })
 }
 
-function displayGameCards_A() {
+function selectSortingOption() {
+  let searchOptions_Array = document.getElementById("dropDown_list").children;
+  console.log(searchOptions_Array);
+  for(i=0;i<searchOptions_Array.length;i++) {
+    // console.log("hellow")
+    searchOptions_Array[i].addEventListener("click", e=> {
+      let selected = e.target.closest('li.dropDown_option')
+      resetCards(selected);
+    })
+  }
+}
+
+function resetCards(selected) {
+  console.log(selected.innerHTML);
+  let GC_holder = document.getElementById('gameCard_holder');
+  let gameCount = GC_holder.childElementCount;
+  for (i=(gameCount-1);i>=0;i--) {
+    GC_holder.children[i].remove();
+  }
+  console.log("clear");
+  displayGameCards_A(selected);
+}
+
+function sortJSON(sortOption) {
+  let jsonFile  = "../gameLibrary/gamesList.json";
+  fetch(jsonFile)
+  .then((response) => response.json())
+  .then((jsObject) => {
+    // jsObject.forEach((game)=> {
+      switch(sortOption) {
+        case "Game Title":
+          console.log(jsObject);
+          break;
+        case "Creator":
+          console.log(jsObject);
+          break;
+        case "Date Contributed":
+          console.log(jsObject);
+          break;
+        case "Play Style":
+          console.log(jsObject);
+          break;
+        case "Fan-Art Style":
+          console.log(jsObject);
+          break;
+        default:
+          console.log(jsObject);
+      }
+    // })
+  })
+}
+
+function displayGameCards_A(sortOption) {
   let GC_holder = document.getElementById('gameCard_holder');
   let jsonFile  = "../gameLibrary/gamesList.json";
-
+  // console.log(GC_holder.childElementCount)
 
   fetch(jsonFile)
   .then((response) => response.json())
   .then((jsObject) => {
+    sortJSON(sortOption);
     jsObject.forEach((game)=> {
       let GC_card = document.createElement('div');
       GC_card.classList.add('gameCard')
@@ -121,10 +180,6 @@ function displayGameCards_A() {
         console.log(card);
         location.href = game.game_url
       })
-      // divLetter.addEventListener('click', e=> {
-      //   let letter = e.target.closest('div');
-      //   console.log(letter.innerHTML);
-      // })
     })
   })
 
