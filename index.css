@@ -4,7 +4,13 @@
   body {
     background-color: rgb(255, 198, 75);
     font-family: 'Chakra Petch', sans-serif;
+    position: relative;
+    min-height: 100vh;
     /* font-family: 'Orbitron', sans-serif; */
+  }
+
+  div#contentWrap {
+    padding-bottom: 100px; /*height of footer*/
   }
 
   #mainContent {
@@ -211,12 +217,15 @@
   /*FOOTER*/
 
   footer {
-    display: block;
-    /* position: sticky; */
+    position: absolute;
     bottom: 0;
+    display: block;
+    height: 100px;
+    /* position: sticky; */
     width: 100%;
     text-align: center;
-    padding: 0.05px 0;
+    /* padding: 0.05px 0; */
+    padding: 0;
   }
 
   p > a:link,
