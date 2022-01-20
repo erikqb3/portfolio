@@ -137,6 +137,13 @@
     margin-bottom: 25px;
   }
 
+  div.cart > div#cartButtons {
+    display: block;
+  }
+
+  div.cart > div#cartButtons > button {
+    /* background-color: blue; */
+  }
   /* menutItems */
 
   div.invisible {
