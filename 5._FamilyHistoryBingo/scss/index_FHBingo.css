@@ -370,8 +370,7 @@ template {
   main > div#centralContent > div#allCombos {
     margin: 0 0 0 0;
     border: 5px solid forestgreen;
-    /* background-color: white; */
-    background-image: url("/5._FamilyHistoryBingo/familySearchLogo.png");
+    background-image: url("../familySearchLogo.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

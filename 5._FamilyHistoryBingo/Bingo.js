@@ -44,17 +44,20 @@ function runTimer_loop(pause) {
   
   console.log(pause)
   let timerDisplay = document.getElementById('timer_display');
+  let inputTime = parseFloat(timerDisplay.innerHTML)
   let time = parseFloat(timerDisplay.innerHTML);
+
   console.log(time)
   let countDown = setInterval(function() {
-    time=parseFloat(time-0.1).toPrecision(5);
+    time=parseFloat(time-0.1).toPrecision(3);
     timerDisplay.innerHTML = time;
     // document.getElementById('timer_display').innerHTML = time;
     // console.log("milisecond")
     console.log(time)
     if (time == 0) {
       console.log(time)
-      clearInterval(countDown); //reset timer
+      playGame();
+      time=inputTime; //reset timer
       console.log("Done")
     }
   }, 100);

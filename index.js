@@ -1,5 +1,19 @@
 
 window.onload = (event) => {
+
+    
+    let success = (0.25*(1));
+    let accurate = (0.25*(0));
+    let fun = (0.2*(-2));
+    let infoQuick = (0.1*(1));
+    let trailQuick = (0.1*(0));
+    let recognize = (0.05*(1));
+    let controls = (0.05*(-1));
+    let simple = (0);
+    
+    console.log(success+accurate+fun+infoQuick+trailQuick+recognize+controls+simple)
+
+
     // const days = [
     //     'Sun.', 'Mon.', 'Tues.', 'Wed.', 'Thurs.', 'Fri.', 'Sat.'
     // ]

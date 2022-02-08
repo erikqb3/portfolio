@@ -4,6 +4,7 @@ body {
 
 main {
   text-align: center;
+  display: block;
 }
 
 h1 {
@@ -64,4 +65,8 @@ main button {
   font-size: 2.5em;
   line-height: 2em;
   margin: 15px;
+}
+
+div#bottomContent {
+  display: block;
 }

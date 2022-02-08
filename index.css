@@ -2,7 +2,11 @@
 
 @media screen and (min-width: 0px) {
   body {
-    background-color: rgb(255, 198, 75);
+    /* background-color: rgb(255, 198, 75); */
+    background-image: url('Picture1.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: none;
     font-family: 'Chakra Petch', sans-serif;
     position: relative;
     min-height: 100vh;
@@ -22,7 +26,7 @@
   /*Name Header*/
   h1,
   footer {
-    background-color: blue;
+    background-color: rgba(0, 0, 255, 0.75);
     color: white;
     /* border-radius: 15px; */
     padding: 0.75em 0;
@@ -55,8 +59,14 @@
     font-size: 2em;
     font-weight: bold;
     margin: 0;
+    color: white;
     /* padding-left: 4em;
   margin: 0; */
+  }
+  div#websiteProjects_label_holder > p {
+    color: black;
+    display: inline;
+    background-color: rgba(255, 255, 255, 0.5);
   }
 
   img {
@@ -83,7 +93,7 @@
   table {
     width: 85%;
     margin: 10px auto;
-    background-color: white;
+    background-color: rgba(200, 200, 200, 0.5);
     text-align: center;
     font-size: 0.75em;
     height: 400px;
@@ -101,7 +111,7 @@
   }
 
   tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: rgba(255, 255, 255, 0.5);
   }
 
   tr {
@@ -112,7 +122,7 @@
   td > a:visited,
   td > a:hover,
   td > a:active {
-    color: green;
+    color: white;
     text-decoration: none;
     font-weight: bold;
     cursor: pointer;
@@ -121,11 +131,11 @@
   /*DropDown*/
   div#dropDown {
     text-align: center;
-    line-height: 1.25em;
+    line-height: 2.5em;
     width: 50%;
     margin: 25px auto;
-    background-color: rgb(48, 22, 75);
-    border: 5px solid rgb(106, 58, 158);
+    background-color: rgba(48, 22, 75, 0.75);
+    border: 5px solid rgba(106, 58, 158, 0.75);
     color: white;
     border-radius: 15px;
   }
