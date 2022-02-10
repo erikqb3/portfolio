@@ -23,6 +23,11 @@
     grid-template-rows: auto 1fr auto;
   }
 
+  div#underMaintenance_text {
+    color: rgba(0, 0, 255, 0.75);
+    text-shadow: 1px 1px black;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
   /*Name Header*/
   h1,
   footer {
@@ -122,7 +127,8 @@
   td > a:visited,
   td > a:hover,
   td > a:active {
-    color: white;
+    color: rgba(0, 0, 255, 0.75);
+    text-shadow: 1px 1px black;
     text-decoration: none;
     font-weight: bold;
     cursor: pointer;
