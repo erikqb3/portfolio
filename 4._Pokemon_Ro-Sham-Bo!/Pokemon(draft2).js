@@ -54,7 +54,10 @@ function getRandomPokemon (path) {
    
   if (path === 1) { 
     clearOtherPokemon();
-    fetch(url).then(response => response.json()).then(yourPokemon); 
+    fetch(url)
+      .then(response => 
+        response.json())
+      .then(yourPokemon); 
     console.log("Hellow!")
   }
   else if (path === 2) {
@@ -64,15 +67,27 @@ function getRandomPokemon (path) {
       alert("You need to get a Pokemon!")
     }
     else {
-      fetch(url).then(response => response.json()).then(otherPokemon).then(prepForCalculations);
+      fetch(url)
+        .then(response => 
+          response.json())
+        .then(otherPokemon)
+        .then(prepForCalculations);
     }
   }
   else if (path === 3) {
     clearOtherPokemon();
     let otherNumber = Math.floor(Math.random() * 899);
     const otherUrl = `https://pokeapi.co/api/v2/pokemon/${otherNumber}`;
-    Promise.all([fetch(url).then(response => response.json()).then(yourPokemon),
-      fetch(otherUrl).then(response => response.json()).then(otherPokemon)]).then(prepForCalculations);
+    Promise
+      .all([fetch(url)
+                  .then(response => 
+                    response.json())
+                  .then(yourPokemon),
+                fetch(otherUrl)
+                  .then(response => 
+                    response.json())
+                  .then(otherPokemon)])
+      .then(prepForCalculations);
     // fetch(url).then(response => response.json()).then(yourPokemon).then(fetch(otherUrl).then(response => response.json()).then(otherPokemon)).then(prepForCalculations);
   }
 }

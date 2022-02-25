@@ -1,7 +1,7 @@
 let text1="Honest"
 let text2="Hi! I'm Honest"
 
-console.log(text1.length,text2.length)
+// console.log(text1.length,text2.length)
 
 function Pokemon(inputSpecies,inputType1,inputType2,inputMainColor) {
   this.species = inputSpecies;
@@ -19,10 +19,10 @@ const Honest = new Pokemon("Rotom","Electric",'Ghost',"Orange")
 
 Pokemon.prototype.currentLevel = 48;
 
-console.log(Honest.currentLevel)
+// console.log(Honest.currentLevel)
 
 let response = (Honest.currentLevel >= 50) ? "You can enter the tournament" : "Go do some more training";
-console.log(response);
+// console.log(response);
 
 
 
