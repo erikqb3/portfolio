@@ -131,10 +131,13 @@ export const specialFeatures = {
         lastClone.id = "lastClone";
         slideHolder.append(firstClone);
         slideHolder.prepend(lastClone);
+
         slideArray[0].classList.add('currentSlide');
         slideNav_array[0].classList.add('currentBtn');
         slideHolder.style.transform = `translateX(${-slideWidth * this.index}px)`;
         
+        console.log(slideArray[0])
+
         this.startSlides(slideHolder, slideWidth);
         this.theEvents(carousel, slideHolder,nextBtn,prevBtn,slideWidth,slideNav_array)
 
